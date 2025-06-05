@@ -1,0 +1,17 @@
+@if (laigitud === true) {
+  <img (click)="laigitud = false" src="/laigitud.svg" alt="">
+} @else {
+  <img (click)="laigitud = true" src="/mittelaigitud.svg" alt="">
+}
+
+
+<br /> <br />
+
+<div>Sõnum: {{sonum}}</div>
+@if (kogus > 0) {
+  <button (click)="nulli()">Tagasi nulli</button>
+}
+<br/>
+<button [disabled]="kogus === 0" (click)="vahenda()">-</button>
+<span>{{kogus}}</span>
+<button (click)="suurenda()">+</button>

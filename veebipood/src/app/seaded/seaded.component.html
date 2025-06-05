@@ -1,0 +1,46 @@
+<label>Aadress</label> <br>
+<input [(ngModel)]="aadress" type="text"> <br>
+<button>Sisesta</button> <br>
+
+<br>
+
+<label>Email</label> <br>
+<input [(ngModel)]="email" type="text"> <br>
+<button>Sisesta</button> <br>
+
+<br>
+
+<label>Telefon</label> <br>
+<input [(ngModel)]="telefon" type="text"> <br>
+<button>Sisesta</button> <br>
+
+<br><br>
+
+<div>Sinu aadress: {{aadress}}</div>
+<div>Sinu email: {{email}}</div>
+<div>Sinu telefon: {{telefon}}</div>
+
+
+<br><br><br>
+
+<div>Aktiivse keele lühend: {{keel}}</div>
+<button (click)="muudaKeel('et')">Eesti</button>
+<button (click)="muudaKeel('en')">English</button>
+<button (click)="muudaKeel('es')">Espanol</button>
+<button (click)="muudaKeel('ru')">Pycckuj</button>
+
+@if (keel === "et") {
+  <div>Leht on eesti keelne</div>
+}
+@if (keel === "en") {
+  <div>Page is in English</div>
+}
+@if (keel === "es") {
+  <div>La página está en español</div>
+}
+@if (keel === "ru") {
+  <div>Страница на русском языке</div>
+}
+@if (keel !== "et") {
+  <div>Other translations other than Estonian are not ready</div>
+}

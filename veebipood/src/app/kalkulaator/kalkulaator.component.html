@@ -1,0 +1,18 @@
+<button (click)="vaade = 'tava'">Tavakalkulaator</button>
+<button (click)="vaade = 'laenu'">Laenukalkulaator</button>
+<button (click)="vaade = 'maksimaalne'">Maksimaalse limiidi kalkulaator</button>
+<br/><br/>
+
+@if (vaade === "tava") {
+  <app-tavakalkulaator />
+}
+
+@if (vaade === "laenu") {
+  <app-laenukalkulaator />
+}
+
+@if (vaade === "maksimaalne") {
+  <app-maksimaalnekalkulaator />
+}
+
+
