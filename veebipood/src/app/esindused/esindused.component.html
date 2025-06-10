@@ -6,12 +6,9 @@
 <button (click)="linn = 'Pärnu'">Pärnu</button>
 
 @if (linn === "Tallinn") {
-  <div>Ülemiste</div>
-  <div>Kristiine</div>
-  <div>Rocca al Mare</div>
-  <div>Vesse</div>
-  <div>Järveotsa</div>
-  <div>Magistrali</div>
+  @for (keskus of tallinnaKeskused; track $index) {
+    <div>{{keskus}}</div>
+  }
 }
 
 @if (linn === "Tartu") {

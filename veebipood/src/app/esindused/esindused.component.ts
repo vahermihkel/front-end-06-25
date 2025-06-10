@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { EsindusService } from '../services/esindus.service';
 
 @Component({
   selector: 'app-esindused',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './esindused.component.html',
   styleUrl: './esindused.component.css'
 })
-export class EsindusedComponent {
+export class EsindusedComponent implements OnInit {
   linn = "Tallinn";
+  tallinnaKeskused: string[] = [];
+
+  constructor(private esindusService: EsindusService) {}
+
+  ngOnInit() {
+    this.tallinnaKeskused = this.esindusService.esindused;
+  }
+
 }

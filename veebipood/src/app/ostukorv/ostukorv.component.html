@@ -1,8 +1,16 @@
-<button (click)="tooted = []">Tühjenda</button>
-<div>Ostukorvis on {{tooted.length}} eset</div>
+@if (tooted.length > 0) {
+  <button (click)="tooted = []">Tühjenda</button>
+  <div>Ostukorvis on {{tooted.length}} eset</div>
+} @else {
+  <div>Ostukorv on tühi</div>
+}
+
 
 @for (toode of tooted; track $index) {
   <div>{{toode}}</div>
+  <button (click)="kustuta($index)">x</button>
 }
 
-<div>Ostukorvi kogusumma xx €</div>
+@if (tooted.length > 0) {
+  <div>Ostukorvi kogusumma {{arvutaKogusumma()}} €</div>
+}

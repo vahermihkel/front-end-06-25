@@ -1,0 +1,23 @@
+<label>Esindus</label> <br>
+<input [(ngModel)]="uusEsindus" type="text"> <br>
+<button (click)="lisa()">Lisa</button>
+<br><br>
+
+<table>
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Esinduse nimi</th>
+      <th>Kustuta</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (esindus of esindused; track $index) {
+      <tr>
+        <td>{{$index}}</td>
+        <td>{{esindus}}</td>
+        <td><button (click)="kustuta($index)">x</button></td>
+      </tr>
+    }
+  </tbody>
+</table>

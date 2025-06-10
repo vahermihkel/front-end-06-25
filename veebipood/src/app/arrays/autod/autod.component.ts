@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AutoService } from '../../services/auto.service';
 
 @Component({
   selector: 'app-autod',
@@ -6,33 +7,17 @@ import { Component } from '@angular/core';
   templateUrl: './autod.component.html',
   styleUrl: './autod.component.css',
 })
-export class AutodComponent {
-  autod = [
-    'Ferrari',
-    'BMW',
-    'Audi',
-    'Mercedes',
-    'Lamborghini',
-    'Tesla',
-    'Aston Martin',
-    'Hyundai',
-    'Volkswagen',
-    'Subaru',
-  ];
+export class AutodComponent implements OnInit {
+  autod: string[] = [];
+
+  constructor(private autoService: AutoService) {}
+
+  ngOnInit() {
+    this.autod = this.autoService.autod.slice();
+  }
 
    reset() {
-    this.autod = [
-    'Ferrari',
-    'BMW',
-    'Audi',
-    'Mercedes',
-    'Lamborghini',
-    'Tesla',
-    'Aston Martin',
-    'Hyundai',
-    'Volkswagen',
-    'Subaru',
-  ];
+    this.autod = this.autoService.autod.slice();
   }
 
   sorteeriAZ() {
@@ -58,22 +43,22 @@ export class AutodComponent {
   }
 
   filtreeriIgaLoppevad() {
-    this.autod = this.autod.filter(auto => auto.endsWith("i"));
+    this.autod = this.autoService.autod.filter(auto => auto.endsWith("i"));
   }
 
   filtreeri7Tahelised() {
-    this.autod = this.autod.filter(auto => auto.length === 7);
+    this.autod = this.autoService.autod.filter(auto => auto.length === 7);
   }
 
   filtreeriKuni7Tahelised() {
-    this.autod = this.autod.filter(auto => auto.length <= 7);
+    this.autod = this.autoService.autod.filter(auto => auto.length <= 7);
   }
 
   filtreeriKellelLyhendAr() {
-    this.autod = this.autod.filter(auto => auto.includes("ar"));
+    this.autod = this.autoService.autod.filter(auto => auto.includes("ar"));
   }
 
   filtreeriTeineTahtE() {
-    this.autod = this.autod.filter(auto => auto[1] === "e");
+    this.autod = this.autoService.autod.filter(auto => auto[1] === "e");
   }
 }
