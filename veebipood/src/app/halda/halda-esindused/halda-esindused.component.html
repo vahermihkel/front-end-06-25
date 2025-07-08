@@ -1,5 +1,9 @@
 <label>Esindus</label> <br>
-<input [(ngModel)]="uusEsindus" type="text"> <br>
+<input [(ngModel)]="uusEsindus.keskus" type="text"> <br>
+<label>Telefon</label> <br>
+<input [(ngModel)]="uusEsindus.tel" type="text"> <br>
+<label>Aadress</label> <br>
+<input [(ngModel)]="uusEsindus.aadress" type="text"> <br>
 <button (click)="lisa()">Lisa</button>
 <br><br>
 
@@ -8,15 +12,21 @@
     <tr>
       <th>Index</th>
       <th>Esinduse nimi</th>
+      <th>Esinduse telefon</th>
+      <th>Esinduse aadress</th>
       <th>Kustuta</th>
+      <th>Muuda</th>
     </tr>
   </thead>
   <tbody>
     @for (esindus of esindused; track $index) {
       <tr>
         <td>{{$index}}</td>
-        <td>{{esindus}}</td>
+        <td>{{esindus.keskus}}</td>
+        <td>{{esindus.tel}}</td>
+        <td>{{esindus.aadress}}</td>
         <td><button (click)="kustuta($index)">x</button></td>
+        <td><button routerLink="/muuda-esindus/{{$index}}">Muuda</button></td>
       </tr>
     }
   </tbody>

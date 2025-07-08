@@ -1,11 +1,9 @@
-<img routerLink="/" class="pilt" src="https://i0.wp.com/accelerista.com/wp-content/uploads/2018/06/nobe.jpg" alt="">
-<button routerLink="/kinkekaardid" class="nupp">Kinkekaardid</button>
-<button routerLink="/lisa-toode" class="nupp">Lisa toode</button>
-<button routerLink="/ostukorv" class="nupp">Ostukorvi</button>
-<button routerLink="/seaded" class="nupp">Seaded</button>
-<button routerLink="/kalkulaator" class="nupp">Kalkulaator</button>
-<button routerLink="/arrays-home" class="nupp">Array'd</button>
-<button routerLink="/halda-home" class="nupp">Array lisamised ja kustutamised</button>
-<br/><br/>
+<div [class.dark]="isDark">
+  <app-navbar />
+  <button (click)="setMode(true)">Dark</button>
+  <button (click)="setMode(false)">Light</button>
 
-<router-outlet />
+  <br/><br/>
+
+  <router-outlet />
+</div>

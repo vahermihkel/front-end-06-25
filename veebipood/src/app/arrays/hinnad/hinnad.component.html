@@ -8,5 +8,6 @@
 <button (click)="filtreeriVaiksemadKui10()">Jäta alles väiksemad kui 10</button>
 
 @for (hind of hinnad; track $index) {
-  <div>{{hind}}</div>
+  <div>{{hind.number}} - {{hind.sonana}}</div>
+  <button routerLink="/hind/{{$index}}">Vt lähemalt</button>
 }

@@ -1,3 +1,14 @@
+<div>{{ kuupaev | date:"dd.MM.yyyy HH:mm:ss" }}</div>
+<div>{{protsent | percent }}<div>
+<div>{{protsent * 100 }}%<div>
+
+
+<button routerLink="/tarnija1" class="nupp">Tarnija1</button>
+<button routerLink="/tarnija2" class="nupp">Tarnija2</button>
+<button routerLink="/tarnija3" class="nupp">Tarnija3</button>
+
+<br><br><br>
+
 @if (laigitud === true) {
   <img (click)="laigitud = false" src="/laigitud.svg" alt="">
 } @else {

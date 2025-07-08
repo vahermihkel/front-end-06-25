@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <a class="navbar-brand" routerLink="/"><img class="pilt" src="https://i0.wp.com/accelerista.com/wp-content/uploads/2018/06/nobe.jpg" alt=""></a>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/kinkekaardid">Kinkekaardid</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lisa-toode">{{'nav.add-product' | translate}}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ostukorv">{{'nav.cart' | translate}}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/seaded">{{'nav.settings' | translate}}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/kalkulaator">{{'nav.calculator' | translate}}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/arrays-home">Array'd</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/halda-home">Array lisamised ja kustutamised</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/kontakteeru">Kontakteeru</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/kaart">Kaart</a>
+        </li>
+
+        @if (sisselogitud === true) {
+          <div>{{kasutaja?.nimi}}</div>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/profiil">Profiil</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">Logi välja</a>
+          </li>
+        } @else {
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login-home">Logi sisse</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/signup">Registreeru</a>
+          </li>
+        }
+        
+      </ul>
+
+      <button (click)="useLanguage('en')">english</button>
+      <button (click)="useLanguage('et')">estonian</button>
+      <div>{{ostukorviKogusumma}}€</div>
+    </div>
+  </div>
+</nav>

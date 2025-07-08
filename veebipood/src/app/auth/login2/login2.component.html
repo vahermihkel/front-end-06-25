@@ -1,0 +1,8 @@
+<form #loginVorm="ngForm" (submit)="logiSisse(loginVorm)">
+  <label>Email</label> <br>
+  <input placeholder="Sisesta email" ngModel name="email" type="text" required> <br>
+  <label>Parool</label> <br>
+  <input placeholder="Sisesta parool" ngModel name="parool" type="password" required> <br>
+  <button [disabled]="loginVorm.valid === false">Logi sisse</button>
+</form>
+<br><br>

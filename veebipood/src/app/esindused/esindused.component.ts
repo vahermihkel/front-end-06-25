@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { EsindusService } from '../services/esindus.service';
+import { RouterLink } from '@angular/router';
+import { Esindus } from '../models/Esindus';
 
 @Component({
   selector: 'app-esindused',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './esindused.component.html',
   styleUrl: './esindused.component.css'
 })
 export class EsindusedComponent implements OnInit {
   linn = "Tallinn";
-  tallinnaKeskused: string[] = [];
+  tallinnaKeskused: Esindus[] = [];
 
   constructor(private esindusService: EsindusService) {}
 

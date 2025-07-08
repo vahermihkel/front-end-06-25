@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './tooted.component.css'
 })
 export class TootedComponent {
+  products: any[] = [];
 // Coca, Fanta, Sprite, Vichy, Red Bull, Aura, Monster Energy, .... 3tk mõelge ise
 
   // sorteeri A-Z

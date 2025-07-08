@@ -1,6 +1,15 @@
-<label>Auto</label> <br>
-<input [(ngModel)]="auto" type="text"> <br>
-<button (click)="lisa()">Lisa</button>
+@if (kasNuppAktiivne === false) {
+  <div>Samasugune auto nimi on juba olemas!</div>
+}
+<label>Auto nimi</label> <br>
+<input [(ngModel)]="auto.nimi" (ngModelChange)="kasUnikaalne()" type="text"> <br>
+<label>Auto hind</label> <br>
+<input [(ngModel)]="auto.hind" type="number"> <br>
+<label>Auto pilt</label> <br>
+<input [(ngModel)]="auto.pilt" type="text"> <br>
+<label>Auto aktiivne</label> <br>
+<input [(ngModel)]="auto.aktiivne" type="checkbox"> <br>
+<button [disabled]="kasNuppAktiivne === false" (click)="lisa()">Lisa</button>
 <br><br>
 
 <table>
@@ -8,15 +17,25 @@
     <tr>
       <th>Index</th>
       <th>Auto nimi</th>
+      <th>Auto hind</th>
+      <th>Auto aktiivne</th>
+      <th>Auto pilt</th>
+      <th>Auto pildi URL</th>
       <th>Kustuta</th>
+      <th>Muuda</th>
     </tr>
   </thead>
   <tbody>
     @for (auto of autod; track $index) {
       <tr>
         <td>{{$index}}</td>
-        <td>{{auto}}</td>
+        <td>{{auto.nimi | shortener:10}}</td>
+        <td>{{auto.hind | price}}</td>
+        <td>{{auto.aktiivne}}</td>
+        <td><img class="pilt" src="{{auto.pilt}}" alt=""></td>
+        <td>{{auto.pilt | shortener:20 }}</td>
         <td><button (click)="kustuta($index)">x</button></td>
+        <td><button routerLink="/muuda-auto/{{$index}}">Muuda</button></td>
       </tr>
     }
   </tbody>

@@ -4,7 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HindService {
-  hinnad = [12,51,155,634,123,15,12,6,7,5];
+  hinnad = [
+    { number: 12, sonana: "kaksteist" },
+    { number: 51, sonana: "viiskümmend üks" },
+    { number: 155, sonana: "sada viiskümmend viis" },
+    { number: 634, sonana: "kuussada kolmkümmend neli" },
+    { number: 123, sonana: "sada kakskümmend kolm" },
+    { number: 15, sonana: "viisteist" },
+    { number: 12, sonana: "kaksteist" },
+    { number: 6, sonana: "kuus" },
+    { number: 7, sonana: "seitse" },
+    { number: 5, sonana: "viis" }
+];
 
   constructor() { }
 }

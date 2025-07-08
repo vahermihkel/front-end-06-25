@@ -1,1 +1,6 @@
-<p>tooted works!</p>
+
+@for (product of products; track $index) {
+  <img src="{{product.image}}" class="picture" alt="">
+  <div>{{product.title}}</div>
+  <div>{{product.price}}€</div>
+}

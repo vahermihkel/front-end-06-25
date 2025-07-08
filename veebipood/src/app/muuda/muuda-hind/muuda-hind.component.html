@@ -1,0 +1,10 @@
+@if (hind === undefined) {
+    <div>Hinda ei leitud</div>
+}
+@else {
+    <label>Hinna number</label> <br>
+    <input [(ngModel)]="hind.number" type="text"> <br>
+    <label>Hind sõnana</label> <br>
+    <input [(ngModel)]="hind.sonana" type="text"> <br>
+    <button (click)="muuda()">Muuda</button>
+}

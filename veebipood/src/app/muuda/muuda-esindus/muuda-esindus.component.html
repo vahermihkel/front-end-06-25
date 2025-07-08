@@ -1,0 +1,12 @@
+@if (esindus === undefined) {
+    <div>Esindust ei leitud</div>
+}
+@else {
+    <label>Esinduse keskus</label> <br>
+    <input [(ngModel)]="esindus.keskus" type="text"> <br>
+    <label>Esinduse telefon</label> <br>
+    <input [(ngModel)]="esindus.tel" type="text"> <br>
+    <label>Esinduse aadress</label> <br>
+    <input [(ngModel)]="esindus.aadress" type="text"> <br>
+    <button (click)="muuda()">Muuda</button>
+}

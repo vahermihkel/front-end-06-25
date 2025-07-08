@@ -1,0 +1,7 @@
+.map {
+  height: 500px;
+  width: 80%;
+  margin: 0 10%;
+  border-radius: 20px;
+  filter: grayscale(100%) brightness(70%);
+}

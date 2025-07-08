@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { EsindusService } from '../../services/esindus.service';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { Esindus } from '../../models/Esindus';
 
 @Component({
   selector: 'app-halda-esindused',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './halda-esindused.component.html',
   styleUrl: './halda-esindused.component.css'
 })
 export class HaldaEsindusedComponent {
-  esindused: string[] = [];
-  uusEsindus = "";
+  esindused: Esindus[] = [];
+  uusEsindus = {keskus: "", tel: "", aadress: ""};
 
   constructor(private esindusService: EsindusService) {}
 
